@@ -1,0 +1,33 @@
+{% extends 'main\lod.html'%}
+
+{% block title %}
+News
+{% endblock %}
+
+{% block body %}
+
+<style>
+    .btn-success{
+        float: left;
+        margin-left: 46%;
+    }
+</style>
+
+<div class="fithers">
+
+    <h1>Новости</h1>
+    {% if news %}
+        {% for el in news %}
+            <div class="alert alert-warning">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.anons }}</p>
+                <a href="{% url 'nowel' el.id %}" class="btn btn-warning">Читать детальнише...</a>
+                <!-- <p>{{ el.id }}</p> -->
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Новости отсутствуют ждите обновления на сайте</p>
+    {% endif %}
+    <a href="{% url 'create' %}"><button class="btn btn-success"><i class="fas fa-plus-circle"></i> Добавить</button></a>
+</div>
+{%endblock%}

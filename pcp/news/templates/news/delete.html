@@ -1,0 +1,28 @@
+{% extends 'main\lod.html'%}
+
+{% block title %}
+Удаление статьй
+{% endblock %}
+
+{% block body %}
+<style>
+    form {
+        margin-left: 30%;
+        width: 43%;
+        margin-top: 3%;
+    }
+
+    .fora {
+        margin-top: -6%;
+    }
+</style>
+
+<div class="fithers">
+
+    <h1 class="fora">Удаление статьй</h1>
+    <form method="post">
+        {% csrf_token %}
+        <span>{{ error }}</span><br>
+        <button class="btn btn-danger" type="submit"><i class="fas fa-solid fa-trash fa-bounce"></i> Удалить статью</button><br>
+    </form>
+    {%endblock%}

@@ -1,0 +1,38 @@
+{% extends 'main\lod.html'%}
+
+{% block title %}
+Форма по добавлению статей
+{% endblock %}
+
+{% block body %}
+<style>
+    form{
+    margin-left: 30%;
+    width: 43%;
+    margin-top: 3%;
+}
+.fora{
+    margin-top: -6%;
+}
+
+</style>
+
+<div class="fithers">
+
+    <h1 class="fora">Форма по добавлению статей</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.title }}<br>
+        {{ form.anons }}<br>
+        {{ form.text }}<br>
+        {{ form.data }}<br>
+        <span>{{ error }}</span><br>
+
+        <!-- <input type="text" placeholder="Название статьй" class="form-control"><br>
+        <input type="text" placeholder="Анонс статьй" class="form-control"><br>
+        <textarea class="form-control" placeholder="Текст статьй"></textarea><br>
+        <input type="date" class="form-control"><br>
+        <input type="time" class="form-control"><br> -->
+        <button class="btn btn-success" type="submit"><i class="fas fa-plus-circle"></i> Добавить статью</button><br>
+    </form>
+{%endblock%}
