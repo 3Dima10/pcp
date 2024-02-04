@@ -1,0 +1,27 @@
+{% extends 'main/lod.html'%}
+
+{% load static %}
+
+{% block style %}<link rel="stylesheet" href="{% static 'main\css\style.css' %}">{% endblock %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block body %}
+
+<div class="fithers">
+    <div class="rew">
+        <h2>Регистрация</h2>
+        <form method="post">
+            {% csrf_token %}
+
+            {% for f in form %}
+                <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label> {{ f }}</p>
+                <div class="form-error">{{ f.errors }}</div>
+            {% endfor %}
+            <button class="reg" type="submit">Регистрация</button>
+        </form>
+    </div>
+</div>
+{%endblock%}

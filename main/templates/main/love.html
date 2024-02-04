@@ -1,0 +1,20 @@
+{% extends 'main/lod.html'%}
+{% load static %}
+
+{% block title %}
+Love Foto
+{% endblock %}
+
+{% block body %}
+<style>
+    #nas-fot {
+        height: 35pc;
+        width: 50%;
+        border-radius: 25px;
+        border: 5px solid rgb(0, 0, 72);
+    }
+</style>
+<div class="fithers">
+    <img src="{% static 'main\img\photo_2024-02-01_18-37-33.jpg' %}" alt="nas" id="nas-fot">
+</div>
+{%endblock%}

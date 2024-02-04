@@ -1,0 +1,161 @@
+{% extends 'main/lod.html'%}
+
+{% block title %}
+News
+{% endblock %}
+
+{% block body %}
+
+<style>
+    /* .btn-success{
+        float: left;
+        margin-left: 30%;
+    } */
+
+    /* Styles for larger screens */
+    @media (min-width: 768px) {
+    aside { float: left; width: 20%; }
+    main { float: right; width: 80%; }
+    .fithers { width: 55%; }
+    .fithers { margin-left: 25%;}
+    .fithers h1 {margin-right: 29%; margin-top: -4%;}
+    .alert-warning { margin: 20px auto; width: 75%; }
+    .btn-success{
+    float: left;
+    margin-left: 25%;}
+    
+    .else{
+        margin-right: 25%;
+    }
+
+    .for{
+        height: 100%;
+        margin-right: 100%;
+    }
+
+    .int_po{
+        width: 75%;
+        height: 28pt;
+        border-radius: 40px;
+        border: 3px solid rgb(0, 0, 72);
+        color: rgb(255, 255, 255);
+        background-color: rgba(30, 30, 30, 0.892);
+        padding-left: 20px;
+    }
+
+    .int_po::placeholder{
+        color: rgb(255, 255, 255);
+        /* text-align: right; */
+    }
+
+    .int_po::first-line{
+        padding: 25px;
+    }
+
+    .poisk{
+        height: 28pt;
+        width: 16%;
+        border-bottom: 40px;
+        border-radius: 25px;
+        border: 3px solid rgb(0, 0, 72);
+        color: rgb(255, 255, 255);
+        background-color: rgba(0, 0, 116, 0.945);
+    }
+    .poisk:hover{
+        background-color: rgba(255, 201, 40, 0.889);
+        
+    }
+    
+
+    /* .int_po:hover{
+        border: 3px solid rgb(0, 0, 72);
+    } */
+    /* #jk{
+        background-color: aliceblue;
+        width: 75%;
+        height: 28pt;
+        border-radius: 40px;
+        border: 3px solid rgb(0, 0, 72);
+    } */
+    }
+
+    /* Styles for smaller screens */
+    @media (max-width: 767px) {
+        aside, main { float: none; width: 100%; }
+        
+        .fithers h1 {margin-left: 30%;}
+        .fithers { width: 25%; }
+        
+        .btn-success{
+        float: left;
+        margin-left: 150%;
+        }
+        .for{
+            height: 100%;
+            margin-right: 100%;
+        }
+
+        .int_po{
+            width: auto;
+            height: 28pt;
+            border-radius: 40px;
+            border: 3px solid rgb(0, 0, 72);
+            color: rgb(255, 255, 255);
+            background-color: rgba(30, 30, 30, 0.892);
+            padding-left: 20px;
+        }
+
+        .int_po::placeholder{
+            color: rgb(255, 255, 255);
+            /* text-align: right; */
+        }
+
+        .int_po::first-line{
+            padding: 25px;
+        }
+
+        .poisk{
+            height: 28pt;
+            width: 16%;
+            border-bottom: 40px;
+            border-radius: 25px;
+            border: 3px solid rgb(0, 0, 72);
+            color: rgb(255, 255, 255);
+            background-color: rgba(0, 0, 116, 0.945);
+        }
+        .poisk:hover{
+            background-color: rgba(255, 201, 40, 0.889);
+
+        }
+    }
+</style>
+
+<div class="fithers">
+
+    <h1>Новости</h1>
+    <div class="for">
+        <form action="{% url 'search'%}" method="get">
+        <!-- <div id="jk"> -->
+        <input type="text" type="search" name="q" placeholder="Поиск" class="int_po">
+        
+        <!-- </div> -->
+            <button type="submit" class="poisk"><i class="bi bi-search"></i></button>
+        </form>
+    </div>
+    {% if news %}
+        {% for el in news %}
+            <div class="alert alert-warning">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.anons }}</p>
+                <a href="{% url 'nowel' el.id %}" class="btn btn-warning">Читать детальнише...</a>
+                <!-- <p>{{ el.id }}</p> -->
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="else">
+        <p>Новости отсутствуют ждите обновления на сайте</p>
+        </div>
+    {% endif %}
+    <a href="{% url 'create' %}"><button class="btn btn-success"><i class="fas fa-plus-circle"></i> Добавить</button></a>
+</div>
+{%endblock%}

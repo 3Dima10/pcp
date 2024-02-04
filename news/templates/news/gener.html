@@ -1,0 +1,44 @@
+{% extends 'main/lod.html'%}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+{% block body %}
+
+<style>
+    .btn-success{
+        margin-right: 2%;
+    }
+    /* Styles for larger screens */
+    @media (min-width: 768px) {
+        aside { float: left; width: 20%; }
+        main { float: right; width: 80%; }
+        .fithers { width: 50%; }
+        .fithers { margin-left: 25%;}
+        .fithers h1 {margin-left: 0%;}
+        .alert-warning { margin: 20px auto; width: 75%; }
+        /* .btn-success{
+        float: left;
+        margin-left: 30%;} */
+    }
+
+    /* Styles for smaller screens */
+    @media (max-width: 767px) {
+        aside, main { float: none; width: 100%; }
+        
+        .fithers h1 {margin-left: 0%;}
+        .fithers { width: 100%; }
+    }
+</style>
+
+
+<div class="fithers">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.anons }}</p>
+    <p>{{ post.text }}</p>
+    <p>{{ post.data }}</p>
+    <a href="{% url 'ubate' post.id %}"><button class="btn btn-success"><i class="fas fa-solid fa-pen fa-bounce"></i> Изменить</button></a>
+    <a href="{% url 'delete' post.id %}"><button class="btn btn-danger" type="submit"><i class="fas fa-solid fa-trash fa-bounce"></i> Удалить статью</button></a>
+</div>
+{%endblock%}

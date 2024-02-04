@@ -1,0 +1,34 @@
+{% extends 'main/lod.html'%}
+
+{% block title %}
+Контакты
+{% endblock %}
+
+{% block body %}
+    <style>
+        .coto {
+            float: left;
+            color: #fff;
+            margin-top: 100px;
+            text-align: center;
+            width: 75%;
+        }
+    
+        .coto h1 {
+            font-size: 50px;
+        }
+    
+        .coto p {
+            font-weight: 400;
+            margin: 20px auto;
+        }
+    </style>
+<div class="coto">
+    <h1 class="text">Контактная информация:</h1>
+
+    <p class="text">Telegram : <a href="t.me\Dolar3510"> t.me\Dolar3510</a> </p>
+    <p class="text">Viber : 0634424737</p>
+    <a href="{% url 'home' %}"><button class="btn btn-warning">Главная страница</button></a>
+
+</div>
+{%endblock%}

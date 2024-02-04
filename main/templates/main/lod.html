@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon"
+        href="{% static 'main\img\logo.png' %}"
+        type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <link rel="stylesheet" href="{% static 'main\css\main.css' %}">
+    {% block style %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+    <style>
+        .fithers {
+            float: left;
+            color: #fff;
+            margin-top: 100px;
+            text-align: center;
+            width: 75%;
+        }
+        .fithers h1{font-size: 50px;}
+        .fithers p{font-weight: 400; margin: 20px auto;}
+        .alert-warning{
+            float: left;
+            clear: both;
+            width: 400px;
+            margin: 20px 34%;
+            text-align: left; 
+        }
+        a { text-decoration: none; }
+        .btn-info{
+            width: 100%;
+        }
+        
+        
+        #a-reg{
+            color: #fff;
+            transition: transform .2s;
+        }
+
+        #a-reg:hover{
+            color: #c34040;
+            text-decoration: none;
+            transform: scale(1.05);
+        }
+
+        /* Styles for larger screens */
+        @media (min-width: 768px) {
+        aside { float: left; width: 20%; }
+        main { float: right; width: 80%; }
+        .fithers { width: 100%; }
+        .alert-warning { margin: 20px auto; width: 75%; }
+        }
+        .span-avo{
+            margin-top: 100%;
+        }
+
+        /* Styles for smaller screens */
+        @media (max-width: 767px) {
+            aside, main { float: none; width: 100%; }
+        }
+        .span-avo{
+            margin-top: 40%;
+        }
+    </style>
+    <aside>
+        <img src="{% static 'main\img\logo.png' %}" alt="logo">
+        <span class="logo">PCP</span>
+        <h3 class="holo">Навигация</h3>
+
+        <ul>
+            <a href="{% url 'home' %}">
+                <li><i class="fas fa-home"></i> Главная</li>
+            </a>
+            
+            <a href="{% url 'news_home' %}">
+                <li><i class="fas fa-newspaper"></i> Новости</li>
+            </a>
+
+            <a href="{% url 'pol' %}">
+                <li><i class="fas fa-address-card"></i> Про Нас</li>
+            </a>
+
+            <a href="{% url 'cot' %}">
+                <li><i class="fas fa-phone"></i> Контакты</li>
+            </a>
+            
+            <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Добавить запись</button></li></a>
+            <div class="span-avo"><a href="{%url 'register' %} " id="a-reg">Регистрация</a> | <a href="#" class="btn btn-primary">Войти</a></div>
+            
+        </ul>
+    </aside>
+    <main>  {% block body %}
+            {% endblock %}
+    </main>
+
+</body>
+</html>

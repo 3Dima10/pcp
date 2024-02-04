@@ -1,0 +1,234 @@
+@media (min-width: 768px) {
+    .rew {
+        float: left;
+        background-color: rgba(0, 0, 0, 0.51);
+        width: 40%;
+        height: 400pt;
+        margin-left: 25%;
+        border-radius: 25px;
+    }
+
+    .rew form {
+        float: left;
+        margin-left: 10%;
+        padding-right: 25%;
+        margin-top: 5%;
+        width: 100%;
+        /* padding-top: 0%; */
+
+    }
+
+    .form-input {
+        /* float: right; */
+        /* margin-right: -25%; */
+        margin-top: 10%;
+        padding: auto;
+        border-radius: 25px;
+        border: 3px solid black;
+        height: 35px;
+        width: 50%;
+        padding-left: 5%;
+        padding-right: 5%;
+        /* margin-right: 25%; */
+    }
+
+    .form-input::placeholder {
+        font-weight: bold;
+    }
+
+    #form-input1 {
+        margin-right: -9%;
+    }
+
+    #form-input2 {
+        margin-right: -24%;
+    }
+
+    #form-input3 {
+        margin-right: -27%;
+    }
+
+    .form-label {
+        float: left;
+        font-weight: bold;
+        margin-top: 10%;
+        /* margin: 5%; */
+    }
+
+    h2 {
+        margin-top: 10%;
+    }
+
+    .reg {
+        margin-top: 10%;
+        width: 55%;
+        height: 28pt;
+        border-radius: 15px;
+        background-color: #0DCAF0FF;
+        border: 1px black;
+        transition: transform .2s;
+        font-weight: bold;
+    }
+
+    .reg:hover {
+        transform: scale(1.05);
+        background-color: rgb(0, 167, 6);
+    }
+}
+
+@media (max-width: 767px) {
+    .rew {
+        float: left;
+        background-color: rgba(0, 0, 0, 0.51);
+        width: 120%;
+        height: 85vh;
+        margin-left: 6%;
+        border-radius: 25px;
+    }
+
+    .rew form {
+        float: left;
+        margin-left: 10%;
+        padding-right: 25%;
+        margin-top: 5%;
+        width: 100%;
+        /* padding-top: 0%; */
+
+    }
+
+    .form-input {
+        /* float: right; */
+        /* margin-right: -25%; */
+        margin-top: 10%;
+        padding: auto;
+        border-radius: 25px;
+        border: 3px solid black;
+        height: 35px;
+        width: 50%;
+        padding-left: 5%;
+        padding-right: 5%;
+        /* margin-right: 25%; */
+    }
+
+    .form-input::placeholder {
+        font-weight: bold;
+    }
+
+    #form-input1 {
+        margin-right: -9%;
+    }
+
+    #form-input2 {
+        margin-right: -24%;
+    }
+
+    #form-input3 {
+        margin-right: -27%;
+    }
+
+    .form-label {
+        float: left;
+        font-weight: bold;
+        margin-top: 10%;
+        /* margin: 5%; */
+    }
+
+    h2 {
+        margin-top: 10%;
+    }
+
+    .reg {
+        margin-top: 10%;
+        width: 55%;
+        height: 28pt;
+        border-radius: 15px;
+        background-color: #0DCAF0FF;
+        border: 1px black;
+        transition: transform .2s;
+        font-weight: bold;
+    }
+
+    .reg:hover {
+        transform: scale(1.05);
+        background-color: rgb(0, 167, 6);
+    }
+
+}
+
+@media (max-width: 500px) {
+    .rew {
+        float: left;
+        background-color: rgba(0, 0, 0, 0.51);
+        width: 120%;
+        height: 75vh;
+        margin-left: 6%;
+        border-radius: 25px;
+    }
+
+    .rew form {
+        float: left;
+        margin-left: 10%;
+        padding-right: 25%;
+        margin-top: 5%;
+        width: 100%;
+        /* padding-top: 0%; */
+
+    }
+
+    .form-input {
+        /* float: right; */
+        /* margin-right: -25%; */
+        margin-top: 10%;
+        padding: auto;
+        border-radius: 25px;
+        border: 3px solid black;
+        height: 35px;
+        width: 50%;
+        padding-left: 5%;
+        padding-right: 5%;
+        /* margin-right: 25%; */
+    }
+
+    .form-input::placeholder {
+        font-weight: bold;
+    }
+
+    #form-input1 {
+        margin-right: -9%;
+    }
+
+    #form-input2 {
+        margin-right: -24%;
+    }
+
+    #form-input3 {
+        margin-right: -27%;
+    }
+
+    .form-label {
+        float: left;
+        font-weight: bold;
+        margin-top: 10%;
+        /* margin: 5%; */
+    }
+
+    h2 {
+        margin-top: 10%;
+    }
+
+    .reg {
+        margin-top: 10%;
+        width: 55%;
+        height: 28pt;
+        border-radius: 15px;
+        background-color: #0DCAF0FF;
+        border: 1px black;
+        transition: transform .2s;
+        font-weight: bold;
+    }
+
+    .reg:hover {
+        transform: scale(1.05);
+        background-color: rgb(0, 167, 6);
+    }
+}
