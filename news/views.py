@@ -67,4 +67,4 @@ def create(request):
         "form": form,
         "error": error,
     }
-    return render(request, "news\\create.html", date)
+    return render(request, "news/create.html", date)

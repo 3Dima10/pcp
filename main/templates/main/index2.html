@@ -5,9 +5,22 @@
 {% endblock %}
 
 {% block body %}
+<style>
+    @media (max-width: 500px) {
+        .text{
+            margin-left: -20%;
+        }
+        .fithers p{
+            margin-left: -28%;
+        }
+        #golop{
+            margin-left: -25%;
+        }
+    }
+</style>
 <div class="fithers">
     <h1 class="text">Добро пожаловать</h1>
     <p class="text">Я предлагаю услуги по созданию Telegram-bot на языке Python</p>
-    <a href="{% url 'home' %}"><button class="btn btn-warning">Главная страница</button></a>
+    <a href="{% url 'home' %}"><button class="btn btn-warning" id="golop">Главная страница</button></a>
 </div>
 {%endblock%}

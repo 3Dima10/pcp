@@ -2,7 +2,7 @@
 
 {% load static %}
 
-{% block style %}<link rel="stylesheet" href="{% static 'main\css\style.css' %}">{% endblock %}
+{% block style %}<link rel="stylesheet" href="{% static 'main/css/style.css' %}">{% endblock %}
 
 {% block title %}
 {{ title }}
@@ -11,6 +11,19 @@
 {% block body %}
 
 <div class="fithers">
+
+    <style>
+        @media (max-width: 500px) {
+            .rew {
+                float: left;
+                background-color: rgba(0, 0, 0, 0.51);
+                width: 120%;
+                height: 75vh;
+                margin-left: -25%;
+                border-radius: 25px;
+            }
+    }
+    </style>
     <div class="rew">
         <h2>Регистрация</h2>
         <form method="post">
