@@ -66,6 +66,22 @@
         margin: 15px 0px;
         margin-left: 2%;   
     }
+    .prol{
+        margin-top: 2%;
+        float: right;
+        margin-right: 10%;
+    }
+    .prilofo{
+        width: 250%;
+        border-radius: 25px;
+        background-color: aqua;
+        border-color: black;
+        border-width: 3px;
+    }
+    .prilofo:hover {
+        background-color: rgb(81, 212, 255);
+        border-width: 4px;
+    }
     @media (max-width: 768px) {
         .alert-warning{
             position: relative;
@@ -74,7 +90,7 @@
             width: 95%;
             margin: 20px 29%;
             margin-left: 5%;
-            margin-right: 17%;
+            margin-right: -11%;
             margin-top: 25px;
             text-align: left;
             height: 15%;
@@ -125,11 +141,37 @@
         margin: 15px 0px;
         margin-left: 2%;
         }
+    
+    .prol{
+        margin-top: 2%;
+        float: right;
+        margin-right: 15%;
+    }
+    .prilofo{
+        width: 250%;
+        border-radius: 25px;
+        background-color: aqua;
+        border-color: black;
+        border-width: 3px;
+    }
+    .prilofo:hover {
+        background-color: rgb(81, 212, 255);
+        border-width: 4px;
+    }
     }
     </style>
+    {% if request.user.is_authenticated %}
+        {% if username == "Dolar" %}
+        <div class="prol">
+            <a href="{% url 'creat' %}"><button class="prilofo"><i class="fi fi-sr-add"></i></button></a>
+        </div>
+        {%endif%}
+    {%endif%}
 
 <div class="fithers">
-    
+
+
+
     <h1>{{ title }}</h1>
     {% if data %}
         {% for el in data %}

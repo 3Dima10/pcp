@@ -1,4 +1,5 @@
 {% extends 'main/lod.html'%}
+{% load static %}
 
 {% block title %}
 Про нас
@@ -6,6 +7,10 @@
 
 {% block body %}
 <style>
+    #a-red{
+        color: aqua;
+        margin-top: 2%;
+    }
     @media (max-width: 500px) {
         .text{
             margin-left: -20%;
@@ -16,11 +21,21 @@
         #golop{
             margin-left: -25%;
         }
+        #a-red{
+            color: aqua;
+        }
+        #profile-log{
+                margin-right: 29%;
+        }
     }
 </style>
 <div class="fithers">
-    <h1 class="text">Добро пожаловать</h1>
-    <p class="text">Я предлагаю услуги по созданию Telegram-bot на языке Python</p>
-    <a href="{% url 'home' %}"><button class="btn btn-warning" id="golop">Главная страница</button></a>
+    {% if request.user.is_authenticated %}
+        <div id="profile-log">
+            <img src="{% static 'main/img/login.png' %}" alt="login" id="login-img">
+            <h2 id="username">{{ username }}</h2>
+            <a href="{%url 'login' %}" id="a-red"><i class="fi fi-rs-exit-alt"></i> Выход</a>
+        </div>
+    {% endif %}      
 </div>
 {%endblock%}

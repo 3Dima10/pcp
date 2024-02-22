@@ -119,6 +119,10 @@ a {
     transform: scale(1.05);
 }
 
+#exit{
+    margin-bottom: 25%;
+}
+
 /* Styles for larger screens */
 @media (min-width: 768px) {
     aside {
