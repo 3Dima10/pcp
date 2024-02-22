@@ -1,0 +1,107 @@
+{% extends 'main/lod.html'%}
+{% load static %}
+
+{% block title %}Вход{% endblock %}
+
+
+
+{% block body %}
+<style>
+    .fithers {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10%;
+    }
+
+    .rew {
+        height: 400px;
+        background-color: #1B1B1B;
+        width: 50%;
+        border-radius: 25px;
+    }
+
+    h2 {
+        color: rgb(255, 255, 255);
+        margin-left: 0%;
+        margin-top: 5%;
+        font-weight: bolder;
+    }
+
+    .fora {
+        margin-top: 15%;
+        margin-left: 15%;
+    }
+
+    .form-input {
+        margin-top: 5%;
+        margin-left: -99%;
+        border-radius: 10px;
+        background-color: #8F8F8F;
+        border: 3px solid rgb(0, 0, 72);
+        width: 80%;
+        height: 40px;
+    }
+
+    .form-input::placeholder {
+        color: rgb(255, 255, 255);
+    }
+
+    #reg {
+        margin-top: 5%;
+        margin-left: -7%;
+        float: left;
+    }
+
+    @media (max-width: 450px) {
+        .rew {
+            margin-top: 15%;
+            height: 500px;
+            margin-left: -32%;
+            background-color: #1B1B1B;
+            width: 125%;
+            border-radius: 25px;
+        }
+
+        #reg {
+            margin-top: 9%;
+            float: left;
+            margin-left: -35%;
+            width: 84%;
+        }
+        .form-input {
+            margin-top: 5%;
+            margin-left: -77%;
+            border-radius: 10px;
+            background-color: #8F8F8F;
+            border: 3px solid rgb(0, 0, 72);
+            width: 150%;
+            height: 40px;
+        }
+        form{
+            width: 68%;
+        }
+        /* .fithers p {
+            font-weight: 400;
+            margin: 20px auto;
+            
+        } */
+    }
+</style>
+<div class="fithers">
+    <div class="rew">
+        <h2>Аунтефикация</h2>
+        <form method="post">
+                {% csrf_token %}
+            <div class="fora">
+                {% for f in form %}
+                <p>{{ f }}</p>
+
+                <div class="form-error">{{ f.errors }}</div>
+                {% endfor %}
+                <button class="btn btn-success" id="reg" type="submit">Войти</button>
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}

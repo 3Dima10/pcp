@@ -11,10 +11,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-straight/css/uicons-regular-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     {% block style %}{% endblock %}
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+    <style>
+        #exit{
+            margin-bottom: 25%;
+        }
+        
+    </style>
     <!-- <style>
         .fithers {
             float: left;
@@ -91,17 +100,27 @@
             <a href="{% url 'cot' %}">
                 <li><i class="fas fa-phone"></i> Контакты</li>
             </a>
-            
             <a href="{% url 'create' %}"><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Добавить запись</button></li></a>
-            <div class="span-avo"><a href="{%url 'register' %} " id="a-reg">Регистрация</a> | <a href="#" class="btn btn-primary">Войти</a></div>
-            
+            {% if request.user.is_authenticated %}
+            <style>
+                #a-reg{
+                    color: aqua;
+                }
+            </style>
+                <div class="span-avo">
+                    <a href="{%url 'login' %}" id="a-reg"><i class="fi fi-rs-exit-alt"></i> Выход</a>
+                </div>
+            {% else %}
+                <div class="span-avo"><a href="{%url 'register' %} " id="a-reg">Регистрация</a> | <a href="{%url 'login' %}" class="btn btn-primary">Войти</a></div>
+            {% endif %}
         </ul>
         <div class="burger">
             <span></span>
         </div>
     </aside>
-    <main>  {% block body %}
-            {% endblock %}
+    <main>
+        {% block body %}
+        {% endblock %}
     </main>
 
     <script>

@@ -1,0 +1,53 @@
+{% extends 'main/lod.html'%}
+
+{% block title %}
+Форма по добавлению статей
+{% endblock %}
+
+{% block body %}
+<style>
+    form {
+        margin-left: 30%;
+        width: 43%;
+        margin-top: 3%;
+    }
+
+    .fora {
+        margin-top: -6%;
+    }
+
+    @media (max-width: 768px) {
+        .div-stato form {
+            margin-left: -15%;
+            width: 100%;
+            margin-top: 3%;
+        }
+
+        .fora {
+            margin-top: -25%;
+            margin-left: -25%;
+        }
+    }
+</style>
+
+<div class="fithers">
+
+    <h1 class="fora">Форма по добавлению приложений</h1>
+    <div class="div-stato">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.title }}<br>
+            {{ form.app }}<br>
+            {{ form.foto }}<br>
+            {{ form.ted }}<br>
+            <span>{{ error }}</span><br>
+
+            <!-- <input type="text" placeholder="Название статьй" class="form-control"><br>
+            <input type="text" placeholder="Анонс статьй" class="form-control"><br>
+            <textarea class="form-control" placeholder="Текст статьй"></textarea><br>
+            <input type="date" class="form-control"><br>
+            <input type="time" class="form-control"><br> -->
+            <button class="btn btn-success" type="submit"><i class="fas fa-plus-circle"></i>  Добавить приложение</button><br>
+        </form>
+    </div>
+{%endblock%}
