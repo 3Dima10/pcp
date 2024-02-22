@@ -30,6 +30,8 @@ def index2(request):
     username = request.user.username
     return render(request, "main/index2.html", {"username": username})
 
+def rol(request):
+    return render(request, "main/rol.html")
 
 def cot(request):
     return render(request, "main/cot.html")

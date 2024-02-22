@@ -30,12 +30,10 @@
     }
 </style>
 <div class="fithers">
-    {% if request.user.is_authenticated %}
         <div id="profile-log">
             <img src="{% static 'main/img/login.png' %}" alt="login" id="login-img">
             <h2 id="username">{{ username }}</h2>
             <a href="{%url 'login' %}" id="a-red"><i class="fi fi-rs-exit-alt"></i> Выход</a>
-        </div>
-    {% endif %}      
+        </div>     
 </div>
 {%endblock%}
