@@ -9,5 +9,6 @@ urlpatterns = [
     path("register/", views.RegisterUser.as_view(), name="register"),
     path("login/", views.LoginUser.as_view(), name="login"),
     path("creat", views.create, name="creat"),
+    path("rol", views.rol, name="rol"),
     # path("user/profile/<str:username>/", views.index2, name="user_profile"),
 ]

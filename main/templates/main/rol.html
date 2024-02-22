@@ -1,0 +1,48 @@
+{% extends 'main/lod.html'%}
+{% load static %}
+
+{% block title %}
+Про нас
+{% endblock %}
+
+{% block body %}
+<style>
+    #a-red {
+        color: aqua;
+        margin-top: 2%;
+    }
+
+    @media (max-width: 500px) {
+        .text {
+            margin-left: -20%;
+        }
+
+        .fithers p {
+            margin-left: -28%;
+        }
+
+        #golop {
+            margin-left: -25%;
+        }
+
+        #a-red {
+            color: aqua;
+        }
+
+        #profile-log {
+            margin-right: 29%;
+        }
+        
+        .vhod{
+            margin-right: 26%;
+        }
+    }
+</style>
+<div class="fithers">
+    <div class="vhod">
+        <h2>Войдите в акаунт</h2>
+        <a href="{%url 'login' %}"><button class="btn btn-success">Войти</button></a>
+    </div>
+</div>
+{%endblock%}
+
